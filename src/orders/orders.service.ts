@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, LessThan, Between } from 'typeorm';
+import { Repository, Between } from 'typeorm';
 
 import { Order } from './entities/order.entity';
 
@@ -16,14 +16,19 @@ export class OrdersService {
   }
 
   async getApproveOrders() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     const twoDaysFromNow = new Date();
     twoDaysFromNow.setDate(twoDaysFromNow.getDate() + 2);
+    twoDaysFromNow.setHours(23, 59, 59, 999);
 
     return await this.ordersRepository.find({
       where: {
         status: 'Approve',
-        shippingPromise: LessThan(twoDaysFromNow),
+        shippingPromise: Between(today, twoDaysFromNow),
       },
+      relations: ['items'],
     });
   }
 

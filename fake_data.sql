@@ -1,9 +1,9 @@
 INSERT INTO `order` (`id`, `createDate`, `status`, `client`, `shippingAddress`, `shippingPromise`) VALUES
-(1, '2023-08-16 10:00:00', 'Approve', 'Client 1', 'Address 1', '2023-08-05 10:00:00'),
+(1, '2023-08-16 10:00:00', 'Approve', 'Client 1', 'Address 1', '2023-08-19 10:00:00'),
 (2, '2023-08-14 11:00:00', 'Cancel', 'Client 2', 'Address 2', '2023-08-06 11:00:00'),
 (3, '2023-08-15 12:00:00', 'Delivery', 'Client 3', 'Address 3', '2023-08-07 12:00:00'),
 (4, '2023-08-16 13:00:00', 'Traveling', 'Client 4', 'Address 4', '2023-08-08 13:00:00'),
-(5, '2023-08-14 14:00:00', 'Approve', 'Client 5', 'Address 5', '2023-08-09 14:00:00');
+(5, '2023-08-14 14:00:00', 'Approve', 'Client 5', 'Address 5', '2023-08-19 14:00:00');
 
 INSERT INTO `item` (`id`, `title`, `description`, `url`, `price`, `quantity`, `orderId`) VALUES
 (1, 'Item 1', 'Description 1', 'http://example.com/1', 100.00, 1, 1),
