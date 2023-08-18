@@ -16,5 +16,5 @@ export const Swagger = (app: INestApplication<any>) => {
     .addTag(SWAGGER_CONFIG.tag)
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('swagger', app, document);
+  SwaggerModule.setup('/', app, document);
 };

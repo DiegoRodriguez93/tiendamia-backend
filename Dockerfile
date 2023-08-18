@@ -14,8 +14,7 @@ RUN yarn
 COPY . .
 
 # Build the application
-RUN npm run build
-RUN npm run copy-files
+RUN yarn build
 
 # Expose the application port
 EXPOSE 80
